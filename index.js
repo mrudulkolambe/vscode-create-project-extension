@@ -17,7 +17,7 @@ app.use("/user", userRouter)
 app.use(cors())
 
 
-mongoose.connect("mongodb://localhost:27017/testdb", { useNewUrlParser: true })
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true })
 	.then(() => console.log("Connected to db"))
 	.catch((err) => console.log(err))
 
